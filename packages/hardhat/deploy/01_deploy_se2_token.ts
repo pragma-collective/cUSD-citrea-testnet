@@ -1,6 +1,5 @@
 import { HardhatRuntimeEnvironment } from "hardhat/types";
 import { DeployFunction } from "hardhat-deploy/types";
-import { Contract, parseEther } from "ethers";
 
 /**
  * Deploys a contract named "YourContract" using the deployer account and
@@ -22,7 +21,7 @@ const deploySe2Token: DeployFunction = async function (hre: HardhatRuntimeEnviro
   const { deployer } = await hre.getNamedAccounts();
   const { deploy } = hre.deployments;
 
-  await deploy("SE2Token", {
+  await deploy("CUSDToken", {
     from: deployer,
     log: true,
     // autoMine: can be passed to the deploy function to make the deployment process faster on local networks by
@@ -35,4 +34,4 @@ export default deploySe2Token;
 
 // Tags are useful if you have multiple deploy files and only want to run one of them.
 // e.g. yarn deploy --tags SE2Token
-deploySe2Token.tags = ["SE2Token"];
+deploySe2Token.tags = ["CUSDToken"];
